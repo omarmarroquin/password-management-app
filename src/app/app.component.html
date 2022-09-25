@@ -1,0 +1,13 @@
+<div class="content" role="main">
+  <app-password-filter></app-password-filter>
+  <app-password-card-list
+    [filter]="(filter$ | async)!"
+    [passwordCardList]="(passwordCardList$ | async)!"></app-password-card-list>
+  <div class="add-password-card-button">
+    <button mat-fab color="primary" aria-label="Create password card" (click)="openCreatePasswordCardFormDialog()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <ng-container *ngIf=" as passwordCardList">
+  </ng-container>
+</div>
