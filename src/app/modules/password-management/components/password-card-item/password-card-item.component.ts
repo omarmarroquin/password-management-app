@@ -44,4 +44,11 @@ export class PasswordCardItemComponent {
     });
   }
 
+  copyToClipboard(): void {
+    const { name, password } = this.passwordCard;
+    navigator.clipboard.writeText(password).then(() => {
+      alert("Copied the password for: " + name);
+    });
+  }
+
 }
